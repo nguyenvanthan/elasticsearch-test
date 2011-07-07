@@ -1,0 +1,50 @@
+# Cluster Settings
+cluster:
+  name: elasticsearch
+
+# Gateway Settings
+#gateway:
+#  recover_after_nodes: 1
+#  recover_after_time: 5m
+#  expected_nodes: 2
+
+
+# Force all memory to be locked, forcing JVM to never swap
+#  (make sure to set MIN and MAX mem to the same value)
+#bootstrap:
+#  mlockall: true
+
+# Unicast Discovery (disable multicast)
+#discovery:
+#  zen:
+#    multicast.enabled: false
+#    unicast.hosts: ["host1", "host2"]
+
+
+path:
+  logs: /home/christian/work/elasticsearch-0.16.2/logs
+  data: /home/christian/work/elasticsearch-0.16.2/data
+
+#index config
+index :
+  store:
+    type: memory
+## default parameters
+  translog:
+    flush_threshold_ops: 5000
+    flush_threshold_size: 500mb
+    flush_threshold_period: 60m
+    
+#    translog:
+#	disable_flush: true
+
+
+#node configuration
+# node.data si false alors le node ne stock pas de donnees
+node:
+  data: false
+
+
+# active ou desactive la communication client(repond aux GET des clients)
+#http:
+#  enabled: false
