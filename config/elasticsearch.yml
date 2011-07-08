@@ -29,6 +29,8 @@ path:
 index :
   store:
     type: memory
+  number_of_replicas: 2
+
 ## default parameters
   translog:
     flush_threshold_ops: 5000
@@ -42,7 +44,7 @@ index :
 #node configuration
 # node.data si false alors le node ne stock pas de donnees
 node:
-  data: false
+  data: true
 
 
 # active ou desactive la communication client(repond aux GET des clients)
